@@ -1,7 +1,6 @@
 package tokenization;
 
-import com.sun.istack.internal.NotNull;
-
+import javax.annotation.Nonnull;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -52,7 +51,7 @@ public class ReviewCommentLengthAnalyzer {
 
     }
 
-    private static float getAvgOfList(@NotNull List<Integer> list) {
+    private static float getAvgOfList(@Nonnull List<Integer> list) {
         long sum = 0;
         for (int item : list) {
             sum += item;

@@ -1,6 +1,5 @@
 package tokenization;
 
-import com.sun.istack.internal.NotNull;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.StopAnalyzer;
@@ -9,6 +8,7 @@ import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.analysis.util.CharArraySet;
 import org.apache.lucene.util.Version;
 
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +38,7 @@ public class EnglishReviewTokenizer {
         reviewAnalyzer = new EnglishAnalyzer(Version.LUCENE_46, stopWordsSet);
     }
 
-    public List<String> tokenize(@NotNull String rawSentence) {
+    public List<String> tokenize(@Nonnull String rawSentence) {
         List<String> tokenResults = new ArrayList<>();
 
         String sentence = preProcess(rawSentence);
