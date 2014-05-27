@@ -1,4 +1,6 @@
-import com.sun.javafx.beans.annotations.NonNull;
+package tokenization;
+
+import com.sun.istack.internal.NotNull;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.core.StopAnalyzer;
@@ -36,7 +38,7 @@ public class EnglishReviewTokenizer {
         reviewAnalyzer = new EnglishAnalyzer(Version.LUCENE_46, stopWordsSet);
     }
 
-    public List<String> tokenize(@NonNull String rawSentence) {
+    public List<String> tokenize(@NotNull String rawSentence) {
         List<String> tokenResults = new ArrayList<>();
 
         String sentence = preProcess(rawSentence);

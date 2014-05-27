@@ -1,5 +1,7 @@
+package tokenization;
+
 import com.google.common.base.Preconditions;
-import com.sun.javafx.beans.annotations.NonNull;
+import com.sun.istack.internal.NotNull;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.util.Version;
@@ -19,10 +21,11 @@ public class TokenCounter {
 
     /**
      * Gets number of tokens in the given sentence. It could handle multiple languages.
+     *
      * @param sentence string of sentence.
      * @return number of token
      */
-    public List<String> getTokens(@NonNull String sentence) {
+    public List<String> getTokens(@NotNull String sentence) {
         Preconditions.checkNotNull(sentence, "Input sentence cannot be null.");
 
         String cleaned_sentences = preProcess(sentence);
@@ -44,12 +47,13 @@ public class TokenCounter {
         return tokenResults;
     }
 
-    public int getNumTokens(@NonNull String sentences) {
+    public int getNumTokens(@NotNull String sentences) {
         return getTokens(sentences).size();
     }
 
     /**
      * Remove unnecessary symbols.
+     *
      * @return clean string after pre-processing.
      */
     private String preProcess(String raw_sentence) {
